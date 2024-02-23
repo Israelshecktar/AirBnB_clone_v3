@@ -13,6 +13,21 @@ import unittest
 Amenity = amenity.Amenity
 
 
+class test_Amenity(test_basemodel):
+    """ """
+
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "Amenity"
+        self.value = Amenity
+
+    def test_name2(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)
+
+
 class TestAmenityDocs(unittest.TestCase):
     """Tests to check the documentation and style of Amenity class"""
     @classmethod
