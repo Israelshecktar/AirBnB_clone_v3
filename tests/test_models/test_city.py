@@ -13,7 +13,24 @@ import unittest
 City = city.City
 
 
-class TestCityDocs(unittest.TestCase):
+class test_City(test_basemodel):
+    """ """
+
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "City"
+        self.value = City
+
+    def test_state_id(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.state_id), str)
+
+    def test_name(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)class TestCityDocs(unittest.TestCase):
     """Tests to check the documentation and style of City class"""
     @classmethod
     def setUpClass(cls):
