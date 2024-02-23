@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Contains the class DBStorage
 """
@@ -74,3 +75,16 @@ class DBStorage:
     def close(self):
         """call remove() method on the private session attribute"""
         self.__session.remove()
+
+    def get(self, cls, id):
+        """Returns the object on the class an its id"""
+        if cls is not None and id is not None:
+            key = "{}.{}".format(cls.__name__, id)
+            return self.all(cls).get(key)
+        return None
+
+    def count(self, cls=None):
+        """Returns the number of objs in storage matching the give class"""
+        if cls is None
+        return len(self.all())
+    return len(self.all(cls))
